@@ -31,6 +31,11 @@
             {
                 echo "<div class='alert alert-success'>Vous avez bien ajouté une nouvelle catégorie à la base de données</div>";
             }
+
+            if(isset($_GET['update']) && is_numeric($_GET['update']))
+            {
+                echo "<div class='alert alert-success'>Vous avez bien modifié une nouvelle catégorie n°".$_GET['update']." à la base de données</div>";
+            }
         ?>
         <table class="table table-striped">
 
