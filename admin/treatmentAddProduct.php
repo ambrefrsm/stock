@@ -47,7 +47,15 @@
             }
         if($err == 0)
         {
-
+            require "../config/connexion.php";
+            $insert = $bdd->prepare("INSERT INTO products(name,date,category,description,cover) VALUE( :nom, :date, :category, :description, :cover)");
+            $insert->execute([
+                ":nom" => $nom,
+                ":date"=>$date,
+                ":category"=>$categorie,
+                ":description"=>$description,
+                ":cover"=>$cover
+            ])
         }else{
             header("LOCATION:addProduct.php?error=".$err);
             exit();
